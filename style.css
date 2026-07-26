@@ -2,15 +2,15 @@
    TOKENS
    ========================================================= */
 :root{
-  --bg:        #14130f;
-  --bg-alt:    #1c1a15;
-  --bg-card:   #201e19;
-  --text:      #f3efe6;
-  --muted:     #a49b88;
-  --line:      #33302a;
-  --olive:     #707c4d;
-  --olive-dark:#565f3b;
-  --mustard:   #d9a53c;
+  --bg:        #0a0e14;
+  --bg-alt:    #10151d;
+  --bg-card:   #141b25;
+  --text:      #eef2f6;
+  --muted:     #8a97a8;
+  --line:      #232d3a;
+  --olive:     #3d8fa8;
+  --olive-dark:#2d6b80;
+  --mustard:   #5fd4e8;
   --danger:    #c1543a;
 
   --font-display: 'Archivo Black', 'Arial Black', sans-serif;
