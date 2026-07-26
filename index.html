@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/405e2a6f6512bc83a2f2d7e523601c21.jpg">
+<title>RULELESS — CLOTHES</title>
+<meta name="description" content="Catálogo de ropa. Hacé tu pedido y coordinamos por mail.">
+
+<!-- Tipografías: display industrial + texto + mono para "etiquetas" -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a href="#top" class="logo">RULELESS<span>CLOTHES</span></a>
+    <nav class="nav">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#como-comprar">Cómo comprar</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#catalogo" class="btn btn-outline nav-cta">Ver catálogo</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">// TEMPORADA 2026</p>
+    <h1>Ropa hecha<br>para durar,<br>y vestir sin filtros.</h1>
+    <p class="hero-sub">Prendas básicas, buena calidad, precio justo. Elegís, nos escribís y coordinamos el pedido directo con nosotros — sin vueltas.</p>
+    <div class="hero-actions"> 
+      <a href="#catalogo" class="btn btn-primary">Ver prendas</a>
+      <a href="#como-comprar" class="btn btn-ghost">¿Cómo se compra?</a>
+    </div> 
+  </div>
+  <div class="hero-tag" aria-hidden="true">
+    <span>100% CALIDAD</span>
+    <span>ENVÍO INMEDIATO</span>
+    <span>PAGO AL COORDINAR</span>
+  </div>
+</section>
+
+<!-- ============ FILTROS + CATÁLOGO ============ -->
+<section class="catalog" id="catalogo">
+  <div class="section-head">
+    <h2>Catálogo</h2>
+    <p class="section-sub">Tocá "Pedir esta prenda" y completá tus datos. Te contestamos por mail para coordinar pago y envío.</p>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-filter="todos">Todos</button>
+    <button class="filter-btn" data-filter="hombre">Hombre</button>
+    <button class="filter-btn" data-filter="mujer">Mujer</button>
+    <button class="filter-btn" data-filter="unisex">Unisex</button>
+  </div>
+
+  <div class="grid" id="product-grid">
+    <!-- Las tarjetas de producto se generan solas desde script.js (array PRODUCTS) -->
+  </div>
+</section>
+
+<!-- ============ COMO COMPRAR ============ -->
+<section class="how-to" id="como-comprar">
+  <div class="section-head">
+    <h2>Cómo comprar</h2>
+  </div>
+  <ol class="steps">
+    <li><span class="step-num">01</span><p>Elegís la prenda y el talle que te queda.</p></li>
+    <li><span class="step-num">02</span><p>Completás el formulario con tus datos de contacto y envío.</p></li>
+    <li><span class="step-num">03</span><p>Te va a abrir tu app de mail con el pedido ya armado — solo tenés que apretar enviar.</p></li>
+    <li><span class="step-num">04</span><p>Te contestamos en el día para coordinar pago y entrega.</p></li>
+  </ol>
+</section>
+
+<!-- ============ CONTACTO / FOOTER ============ -->
+<footer class="site-footer" id="contacto">
+  <div class="footer-inner">
+    <div>
+      <p class="logo footer-logo">RULELESS<span>CLOTHES</span></p>
+      <p class="footer-text">Escribinos directo a <a href="mailto:tuemail@gmail.com">norules-clothes@gmail.com</a> o usá el botón "Pedir" en cualquier prenda.</p>
+    </div>
+    <div class="footer-links">
+      <p class="footer-title">CONTACTO</p>
+      <a href="https://www.instagram.com/leonavarro_g/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/543731544961?text=Hola!%20Vi%20tu%20catálogo%20y%20quiero%20consultar%20por%20una%20prenda." target="_blank" rel="noopener">WhatsApp Leo</a>
+      <a href="https://wa.me/543731537783?text=Hola!%20Vi%20tu%20catálogo%20y%20quiero%20consultar%20por%20una%20prenda." target="_blank" rel="noopener">WhatsApp Giuli</a>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2026 RULELESS. Todos los derechos reservados.</p>
+</footer>
+
+<!-- ============ MODAL DE PEDIDO ============ -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+    <p class="modal-eyebrow">// PEDIDO</p>
+    <h3 id="modal-title">Nombre de la prenda</h3>
+    <p class="modal-price" id="modal-price">$0</p>
+
+    <form id="order-form">
+      <div class="field">
+        <label for="talle">Talle</label>
+        <select id="talle" required></select>
+      </div>
+
+      <div class="field">
+        <label for="cantidad">Cantidad</label>
+        <input type="number" id="cantidad" min="1" value="1" required>
+      </div>
+
+      <div class="field">
+        <label for="nombre">Nombre y apellido</label>
+        <input type="text" id="nombre" required placeholder="Ej: Juana Pérez">
+      </div>
+
+      <div class="field">
+        <label for="telefono">Teléfono / WhatsApp</label>
+        <input type="tel" id="telefono" required placeholder="Ej: 3731 123456">
+      </div>
+
+      <div class="field">
+        <label for="localidad">Localidad / dirección de envío</label>
+        <input type="text" id="localidad" required placeholder="Ciudad, provincia">
+      </div>
+
+      <div class="field">
+        <label for="comentario">Comentario (opcional)</label>
+        <textarea id="comentario" rows="2" placeholder="Color, algo puntual del pedido..."></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-primary">Enviar pedido por mail</button>
+        <button type="button" class="btn btn-outline" id="copy-order">Copiar pedido</button>
+      </div>
+      <p class="modal-hint" id="copy-feedback"></p>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
