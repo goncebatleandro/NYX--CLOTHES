@@ -3,9 +3,9 @@
    ========================================================= */
 const CONFIG = {
   // El mail donde te van a llegar los pedidos (se arma un mailto: con esto)
-  email: "tuemail@gmail.com",
+  email: "nyx-clothes@gmail.com",
   // Nombre de la marca, para que aparezca en el asunto del mail
-  nombreMarca: "Nombre de tu marca",
+  nombreMarca: "NYX - CLOTHES",
 };
 
 /* =========================================================
@@ -42,11 +42,11 @@ const PRODUCTS = [
   },
   {
     id: "p4",
-    nombre: "Jean spider",
+    nombre: "Jean chain",
     categoria: "jeans",
     precio: 27999,
     talles: ["S", "M", "L", "XL"],
-    imagen: "img/jeanspider.jpg",
+    imagen: "img/jeanchain.jpg",
   },
   {
     id: "p5",
