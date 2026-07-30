@@ -26,6 +26,9 @@
       <a href="#contacto">Contacto</a>
     </nav>
     <a href="#catalogo" class="btn btn-outline nav-cta">Ver catálogo</a>
+    <button class="cart-btn" id="cart-btn" aria-label="Ver carrito">
+      🛒 <span class="cart-count" id="cart-count">0</span>
+    </button>
   </div>
 </header>
 
@@ -96,15 +99,15 @@
   <p class="footer-bottom">© 2026 NYX. Todos los derechos reservados.</p>
 </footer>
 
-<!-- ============ MODAL DE PEDIDO ============ -->
+<!-- ============ MODAL: AGREGAR AL CARRITO (talle + cantidad) ============ -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
-    <p class="modal-eyebrow">// PEDIDO</p>
+    <p class="modal-eyebrow">// AGREGAR AL CARRITO</p>
     <h3 id="modal-title">Nombre de la prenda</h3>
     <p class="modal-price" id="modal-price">$0</p>
 
-    <form id="order-form">
+    <form id="add-to-cart-form">
       <div class="field">
         <label for="talle">Talle</label>
         <select id="talle" required></select>
@@ -115,6 +118,28 @@
         <input type="number" id="cantidad" min="1" value="1" required>
       </div>
 
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ MODAL: CARRITO + DATOS DE ENVÍO ============ -->
+<div class="modal-overlay" id="cart-overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+    <button class="modal-close" id="cart-close" aria-label="Cerrar">✕</button>
+    <p class="modal-eyebrow">// TU CARRITO</p>
+    <h3 id="cart-title">Carrito de compras</h3>
+
+    <div class="cart-items" id="cart-items">
+      <!-- Se completa solo desde script.js -->
+    </div>
+
+    <p class="cart-empty" id="cart-empty">Todavía no agregaste ninguna prenda.</p>
+    <p class="cart-total" id="cart-total"></p>
+
+    <form id="order-form">
       <div class="field">
         <label for="nombre">Nombre y apellido</label>
         <input type="text" id="nombre" required placeholder="Ej: Juana Pérez">
@@ -143,6 +168,9 @@
     </form>
   </div>
 </div>
+
+<!-- Aviso chiquito de "agregado al carrito" -->
+<div class="toast" id="toast"></div>
 
 <script src="script.js"></script>
 </body>
