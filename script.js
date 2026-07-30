@@ -65,6 +65,30 @@ const PRODUCTS = [
     talles: ["S", "M", "L"],
     imagen: "img/remerabasica.jpg",
   },
+  {
+    id: "p6",
+    nombre: "Remera básica",
+    categoria: "remeras",
+    precio: 17999,
+    talles: ["S", "M", "L"],
+    imagen: "img/remerabasica.jpg",
+  },
+  {
+    id: "p6",
+    nombre: "Remera básica",
+    categoria: "remeras",
+    precio: 17999,
+    talles: ["S", "M", "L"],
+    imagen: "img/remerabasica.jpg",
+  },
+  {
+    id: "p6",
+    nombre: "Remera básica",
+    categoria: "remeras",
+    precio: 17999,
+    talles: ["S", "M", "L"],
+    imagen: "img/remerabasica.jpg",
+  },
 ];
 
 /* =========================================================
