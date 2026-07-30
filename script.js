@@ -125,7 +125,7 @@ function renderGrid(filtro = "todos"){
         <div class="card-sizes">
           ${producto.talles.map((t) => `<span>${t}</span>`).join("")}
         </div>
-        <button class="btn btn-primary" data-id="${producto.id}">Pedir esta prenda</button>
+        <button class="btn btn-primary" data-id="${producto.id}"><b>Pedir esta prenda</b></button>
       </div>
     `;
     grid.appendChild(card);
